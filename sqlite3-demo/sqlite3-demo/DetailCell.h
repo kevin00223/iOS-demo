@@ -2,7 +2,7 @@
 //  DetailCell.h
 //  sqlite3-demo
 //
-//  Created by likai on 2017/4/24.
+//  Created by likai on 2017/4/25.
 //  Copyright © 2017年 yinbake. All rights reserved.
 //
 
@@ -11,6 +11,10 @@
 
 @interface DetailCell : UITableViewCell
 
-@property (nonatomic, strong) ShopModel *shopModel;
+@property (strong, nonatomic) ShopModel *shopModel;
+
+@property (weak, nonatomic) IBOutlet UITextField *IDField;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *priceField;
 
 @end

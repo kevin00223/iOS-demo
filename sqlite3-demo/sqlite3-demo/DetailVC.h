@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ShopModel.h"
 
 @interface DetailVC : UITableViewController
 
-@property (nonatomic, strong) ShopModel *shopModel;
 
 @end

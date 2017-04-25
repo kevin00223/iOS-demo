@@ -18,7 +18,9 @@
 		A2E7722B1EA9E384005FE0AD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E7722A1EA9E384005FE0AD /* libsqlite3.tbd */; };
 		A2E7722E1EADE588005FE0AD /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E7722D1EADE588005FE0AD /* ShopModel.m */; };
 		A2E772311EADE7DA005FE0AD /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E772301EADE7DA005FE0AD /* DetailVC.m */; };
-		A2E772341EADED59005FE0AD /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E772331EADED59005FE0AD /* DetailCell.m */; };
+		A2E772371EAF25B1005FE0AD /* SqliteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E772361EAF25B1005FE0AD /* SqliteManager.m */; };
+		A2E772441EAF4235005FE0AD /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E772421EAF4235005FE0AD /* DetailCell.m */; };
+		A2E772451EAF4235005FE0AD /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E772431EAF4235005FE0AD /* DetailCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +62,11 @@
 		A2E7722D1EADE588005FE0AD /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
 		A2E7722F1EADE7DA005FE0AD /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
 		A2E772301EADE7DA005FE0AD /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
-		A2E772321EADED59005FE0AD /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
-		A2E772331EADED59005FE0AD /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		A2E772351EAF25B1005FE0AD /* SqliteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteManager.h; sourceTree = "<group>"; };
+		A2E772361EAF25B1005FE0AD /* SqliteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteManager.m; sourceTree = "<group>"; };
+		A2E772411EAF4235005FE0AD /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		A2E772421EAF4235005FE0AD /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		A2E772431EAF4235005FE0AD /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +132,11 @@
 				A2E7722D1EADE588005FE0AD /* ShopModel.m */,
 				A2E7722F1EADE7DA005FE0AD /* DetailVC.h */,
 				A2E772301EADE7DA005FE0AD /* DetailVC.m */,
-				A2E772321EADED59005FE0AD /* DetailCell.h */,
-				A2E772331EADED59005FE0AD /* DetailCell.m */,
+				A2E772351EAF25B1005FE0AD /* SqliteManager.h */,
+				A2E772361EAF25B1005FE0AD /* SqliteManager.m */,
+				A2E772411EAF4235005FE0AD /* DetailCell.h */,
+				A2E772421EAF4235005FE0AD /* DetailCell.m */,
+				A2E772431EAF4235005FE0AD /* DetailCell.xib */,
 			);
 			path = "sqlite3-demo";
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 			files = (
 				A2E772061EA9E33C005FE0AD /* LaunchScreen.storyboard in Resources */,
 				A2E772031EA9E33C005FE0AD /* Assets.xcassets in Resources */,
+				A2E772451EAF4235005FE0AD /* DetailCell.xib in Resources */,
 				A2E772011EA9E33C005FE0AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,10 +311,11 @@
 			files = (
 				A2E771FE1EA9E33C005FE0AD /* ViewController.m in Sources */,
 				A2E772311EADE7DA005FE0AD /* DetailVC.m in Sources */,
-				A2E772341EADED59005FE0AD /* DetailCell.m in Sources */,
 				A2E7722E1EADE588005FE0AD /* ShopModel.m in Sources */,
 				A2E771FB1EA9E33C005FE0AD /* AppDelegate.m in Sources */,
+				A2E772441EAF4235005FE0AD /* DetailCell.m in Sources */,
 				A2E771F81EA9E33C005FE0AD /* main.m in Sources */,
+				A2E772371EAF25B1005FE0AD /* SqliteManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,13 +7,19 @@
 //
 
 #import "DetailVC.h"
-
-
+#import "SqliteManager.h"
+#import "ViewController.h"
+#import "ShopModel.h"
+#import "DetailCell.h"
 
 static NSString *cellID = @"cellID";
 
 @interface DetailVC ()
 
+@property (strong, nonatomic) SqliteManager *sqlManager;
+@property (nonatomic, strong) ShopModel *shopModel;
+
+@property (copy, nonatomic) NSArray *shopArr;
 
 @end
 
@@ -23,89 +29,58 @@ static NSString *cellID = @"cellID";
     [super viewDidLoad];
     
 //    self.view.backgroundColor = [UIColor orangeColor];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"DetailCell" bundle:nil] forCellReuseIdentifier:cellID];
+    
+    SqliteManager *sqlManager = [SqliteManager sharedManager];
+    self.sqlManager = sqlManager;
+    
+    [self quaryDataFromTable];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)setShopModel:(ShopModel *)shopModel
+//读取表
+- (void)quaryDataFromTable
 {
-    _shopModel = shopModel;
-    [self.tableView reloadData];
+    NSString *quary = [NSString stringWithFormat:@"SELECT * FROM t_shop"];
+    NSArray *arr = [self.sqlManager execQuary:quary]; //字典数组
+    
+    NSMutableArray *mArr = [NSMutableArray array];
+    for (NSDictionary *dic in arr) {
+        ShopModel *spModel = [ShopModel modelWithDic:dic];
+        [mArr addObject:spModel];
+    }
+    self.shopArr = mArr;
 }
+
+
 
 #pragma mark - Table view data source
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 6;
+    return self.shopArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    cell.textLabel.text = self.shopModel.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", self.shopModel.price];
+    DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    cell.shopModel = self.shopArr[indexPath.row];
+    cell.IDField.text = [NSString stringWithFormat:@"%ld", (long)cell.shopModel.idNum];
+    cell.nameField.text = cell.shopModel.name;
+    cell.priceField.text = [NSString stringWithFormat:@"%@", cell.shopModel.price];
+    
+//    [cell layoutSubviews];
     
     return cell;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+//初始化
+- (NSArray *) arr
+{
+    if (!_shopArr)
+    {
+        _shopArr = [NSArray new];
+    }
+    return _shopArr;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -10,4 +10,18 @@
 
 @implementation ShopModel
 
++ (instancetype)modelWithDic:(NSDictionary *)dic
+{
+    ShopModel *shopModel = [[self alloc]init];
+    [shopModel setValuesForKeysWithDictionary:dic];
+    return shopModel;
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    if ([key isEqualToString:@"id"]){
+        self.idNum = [value integerValue];
+    }
+}
+
 @end

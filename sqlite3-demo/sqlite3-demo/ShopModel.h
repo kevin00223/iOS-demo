@@ -10,8 +10,11 @@
 
 @interface ShopModel : NSObject
 
-@property (nonatomic, assign) NSInteger shopID;
+@property (nonatomic, assign) NSInteger idNum;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *price;
+
++ (instancetype) modelWithDic: (NSDictionary *)dic;
+
 
 @end
