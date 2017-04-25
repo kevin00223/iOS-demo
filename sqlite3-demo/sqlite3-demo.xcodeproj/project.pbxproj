@@ -16,6 +16,9 @@
 		A2E772111EA9E33C005FE0AD /* sqlite3_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E772101EA9E33C005FE0AD /* sqlite3_demoTests.m */; };
 		A2E7721C1EA9E33C005FE0AD /* sqlite3_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E7721B1EA9E33C005FE0AD /* sqlite3_demoUITests.m */; };
 		A2E7722B1EA9E384005FE0AD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E7722A1EA9E384005FE0AD /* libsqlite3.tbd */; };
+		A2E7722E1EADE588005FE0AD /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E7722D1EADE588005FE0AD /* ShopModel.m */; };
+		A2E772311EADE7DA005FE0AD /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E772301EADE7DA005FE0AD /* DetailVC.m */; };
+		A2E772341EADED59005FE0AD /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E772331EADED59005FE0AD /* DetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		A2E7721B1EA9E33C005FE0AD /* sqlite3_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sqlite3_demoUITests.m; sourceTree = "<group>"; };
 		A2E7721D1EA9E33C005FE0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E7722A1EA9E384005FE0AD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A2E7722C1EADE588005FE0AD /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopModel.h; sourceTree = "<group>"; };
+		A2E7722D1EADE588005FE0AD /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
+		A2E7722F1EADE7DA005FE0AD /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		A2E772301EADE7DA005FE0AD /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
+		A2E772321EADED59005FE0AD /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		A2E772331EADED59005FE0AD /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +123,12 @@
 				A2E772041EA9E33C005FE0AD /* LaunchScreen.storyboard */,
 				A2E772071EA9E33C005FE0AD /* Info.plist */,
 				A2E771F61EA9E33C005FE0AD /* Supporting Files */,
+				A2E7722C1EADE588005FE0AD /* ShopModel.h */,
+				A2E7722D1EADE588005FE0AD /* ShopModel.m */,
+				A2E7722F1EADE7DA005FE0AD /* DetailVC.h */,
+				A2E772301EADE7DA005FE0AD /* DetailVC.m */,
+				A2E772321EADED59005FE0AD /* DetailCell.h */,
+				A2E772331EADED59005FE0AD /* DetailCell.m */,
 			);
 			path = "sqlite3-demo";
 			sourceTree = "<group>";
@@ -286,6 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E771FE1EA9E33C005FE0AD /* ViewController.m in Sources */,
+				A2E772311EADE7DA005FE0AD /* DetailVC.m in Sources */,
+				A2E772341EADED59005FE0AD /* DetailCell.m in Sources */,
+				A2E7722E1EADE588005FE0AD /* ShopModel.m in Sources */,
 				A2E771FB1EA9E33C005FE0AD /* AppDelegate.m in Sources */,
 				A2E771F81EA9E33C005FE0AD /* main.m in Sources */,
 			);
@@ -521,6 +539,7 @@
 				A2E772221EA9E33C005FE0AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2E772231EA9E33C005FE0AD /* Build configuration list for PBXNativeTarget "sqlite3-demoTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +548,7 @@
 				A2E772251EA9E33C005FE0AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2E772261EA9E33C005FE0AD /* Build configuration list for PBXNativeTarget "sqlite3-demoUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +557,7 @@
 				A2E772281EA9E33C005FE0AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
