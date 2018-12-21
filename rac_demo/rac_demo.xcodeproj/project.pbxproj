@@ -19,6 +19,7 @@
 		A290166A21CCC052004404A2 /* LKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A290166921CCC052004404A2 /* LKBaseViewController.m */; };
 		A290166D21CCCBE1004404A2 /* LKSimulatedNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = A290166C21CCCBE1004404A2 /* LKSimulatedNetworkService.m */; };
 		A290167021CCD0F1004404A2 /* LKSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A290166F21CCD0F1004404A2 /* LKSuccessViewController.m */; };
+		A290167321CCE0D6004404A2 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = A290167221CCE0D6004404A2 /* Debug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		A290166C21CCCBE1004404A2 /* LKSimulatedNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKSimulatedNetworkService.m; sourceTree = "<group>"; };
 		A290166E21CCD0F1004404A2 /* LKSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKSuccessViewController.h; sourceTree = "<group>"; };
 		A290166F21CCD0F1004404A2 /* LKSuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKSuccessViewController.m; sourceTree = "<group>"; };
+		A290167121CCE0D5004404A2 /* rac_demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rac_demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A290167221CCE0D6004404A2 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		CB7503F3E9A52DAF5A656A1E /* Pods-rac_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rac_demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rac_demo/Pods-rac_demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +152,8 @@
 				A290166C21CCCBE1004404A2 /* LKSimulatedNetworkService.m */,
 				A290166E21CCD0F1004404A2 /* LKSuccessViewController.h */,
 				A290166F21CCD0F1004404A2 /* LKSuccessViewController.m */,
+				A290167221CCE0D6004404A2 /* Debug.swift */,
+				A290167121CCE0D5004404A2 /* rac_demo-Bridging-Header.h */,
 			);
 			path = rac_demo;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				TargetAttributes = {
 					A290163221CCBFCE004404A2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					A290164A21CCBFD0004404A2 = {
 						CreatedOnToolsVersion = 10.1;
@@ -329,6 +335,7 @@
 				A290164621CCBFCF004404A2 /* main.m in Sources */,
 				A290166D21CCCBE1004404A2 /* LKSimulatedNetworkService.m in Sources */,
 				A290166A21CCC052004404A2 /* LKBaseViewController.m in Sources */,
+				A290167321CCE0D6004404A2 /* Debug.swift in Sources */,
 				A290163821CCBFCE004404A2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +508,7 @@
 			baseConfigurationReference = CB7503F3E9A52DAF5A656A1E /* Pods-rac_demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = rac_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -509,6 +517,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-223LK.rac-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rac_demo/rac_demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -518,6 +529,7 @@
 			baseConfigurationReference = 79B412B513AED474E23C165D /* Pods-rac_demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = rac_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,6 +538,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-223LK.rac-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rac_demo/rac_demo-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -533,6 +547,7 @@
 		A290166321CCBFD0004404A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = rac_demoTests/Info.plist;
@@ -551,6 +566,7 @@
 		A290166421CCBFD0004404A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = rac_demoTests/Info.plist;
@@ -569,6 +585,7 @@
 		A290166621CCBFD0004404A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = rac_demoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -586,6 +603,7 @@
 		A290166721CCBFD0004404A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = rac_demoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

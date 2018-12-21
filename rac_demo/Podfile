@@ -3,5 +3,6 @@ platform :ios, '9.0'
 target 'rac_demo' do
 
 pod 'Masonry'
+pod 'ReactiveCocoa'
 
 end

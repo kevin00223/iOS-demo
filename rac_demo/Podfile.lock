@@ -1,16 +1,28 @@
 PODS:
   - Masonry (1.1.0)
+  - ReactiveCocoa (8.0.2):
+    - ReactiveSwift (~> 4.0)
+  - ReactiveSwift (4.0.0):
+    - Result (~> 4.0)
+  - Result (4.0.0)
 
 DEPENDENCIES:
   - Masonry
+  - ReactiveCocoa
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Masonry
+    - ReactiveCocoa
+    - ReactiveSwift
+    - Result
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveCocoa: fbd26e9ba60e98417ee47433e59465a98ed9da0f
+  ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
 
-PODFILE CHECKSUM: 74f33c6978e247ae3124a7841d4fca8efe54fa41
+PODFILE CHECKSUM: 499faf1a31c029c00b2422f5d2a699f685e55fab
 
 COCOAPODS: 1.5.3
