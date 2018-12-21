@@ -39,6 +39,7 @@
 
 - (void)initValues {
     self.title = @"Sign In";
+    self.signInButton.enabled = NO;
     self.networkService = [[LKSimulatedNetworkService alloc]init];
 }
 
@@ -82,7 +83,9 @@
 }
 
 - (void)signInButtonClicked: (UIButton *)sender {
+    self.signInButton.enabled = NO;
     [self.networkService signInWithUserName:self.userNameTextField.text password:self.passwordTextField.text complete:^(BOOL success) {
+        self.signInButton.enabled = YES;
         if (success) {
             [self.navigationController pushViewController:[LKSuccessViewController new] animated:YES];
         }else{
@@ -123,7 +126,7 @@
         [_signInButton sizeToFit];
         [_signInButton setTitle:@"Sign In" forState:UIControlStateNormal];
         [_signInButton addTarget:self action:@selector(signInButtonClicked:) forControlEvents: UIControlEventTouchUpInside];
-        [_signInButton setTitleColor:[UIColor cyanColor] forState:UIControlStateNormal];
+        [_signInButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }
     return _signInButton;
 }
