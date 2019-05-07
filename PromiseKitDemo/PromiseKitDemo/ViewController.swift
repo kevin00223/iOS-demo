@@ -33,18 +33,18 @@ class ViewController: UIViewController {
         print("开始做饭")
         let promise = Promise<String> { resolver in
             //延迟操作
-//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-//                print("做饭完毕")
-//                //fulfil为满足/完成状态, 进入then函数
-//                resolver.fulfill("鸡蛋炒饭")
-//            })
-            
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-                print("做饭失败")
-                let error = NSError(domain: "PromiseKitDemo", code: 0, userInfo: [NSLocalizedDescriptionKey : "烧焦的米饭"])
-                //reject为拒绝状态, 进入catch函数
-                resolver.reject(error)
+                print("做饭完毕")
+                //fulfil为满足/完成状态, 进入then函数
+                resolver.fulfill("鸡蛋炒饭")
             })
+            
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+//                print("做饭失败")
+//                let error = NSError(domain: "PromiseKitDemo", code: 0, userInfo: [NSLocalizedDescriptionKey : "烧焦的米饭"])
+//                //reject为拒绝状态, 进入catch函数
+//                resolver.reject(error)
+//            })
         }
         return promise
     }
@@ -53,10 +53,14 @@ class ViewController: UIViewController {
         print("开始吃饭:" + data)
         let promise = Promise<String> { resolver in
             //延迟操作
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+            after(seconds: 1).done{
                 print("吃饭完毕")
                 resolver.fulfill("一双筷子一个碗")
-            })
+            }
+//            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+//                print("吃饭完毕")
+//                resolver.fulfill("一双筷子一个碗")
+//            })
         }
         return promise
     }
