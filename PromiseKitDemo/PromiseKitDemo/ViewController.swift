@@ -24,6 +24,8 @@ class ViewController: UIViewController {
                 print(data)
             }.catch{ error in
                 print(error.localizedDescription + "没法吃!")
+            }.finally {
+                print("出门上班")
             }
     }
     
