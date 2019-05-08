@@ -27,8 +27,21 @@ class ViewController: UIViewController {
             }.finally {
                 print("出门上班")
             }
+        
+        //开始监听通知
+        beginObserve()
     }
     
+    // MARK: Notification
+    func beginObserve() {
+        NotificationCenter.default.observe(once: UIApplication.didEnterBackgroundNotification).done { notification in
+                print("程序进入后台")
+            //通知相应后 PromiseKit会自动将通知取消 因此想继续监听 需要再次调用
+            self.beginObserve()
+        }
+    }
+    
+    // MARK: Async
     func cook() -> Promise<String> {
         print("开始做饭")
         let promise = Promise<String> { resolver in
